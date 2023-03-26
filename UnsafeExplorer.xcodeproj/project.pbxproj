@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA76288929CF9A7D00DD9021 /* UWCSampler in Frameworks */ = {isa = PBXBuildFile; productRef = DA76288829CF9A7D00DD9021 /* UWCSampler */; };
 		DAB24EA129CF99DB0004D06C /* UnsafeExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */; };
 		DAB24EA329CF99DB0004D06C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB24EA229CF99DB0004D06C /* ContentView.swift */; };
 		DAB24EA529CF99DD0004D06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB24EA429CF99DD0004D06C /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		DAB24EA429CF99DD0004D06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB24EA629CF99DD0004D06C /* UnsafeExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnsafeExplorer.entitlements; sourceTree = "<group>"; };
 		DAB24EA829CF99DD0004D06C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DAB24EB029CF99F80004D06C /* UnsafeWrapCSampler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UnsafeWrapCSampler; path = ../UnsafeWrapCSampler; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +29,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA76288929CF9A7D00DD9021 /* UWCSampler in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA76288729CF9A7D00DD9021 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DAB24E9429CF99DB0004D06C = {
 			isa = PBXGroup;
 			children = (
+				DAB24EAF29CF99F80004D06C /* Packages */,
 				DAB24E9F29CF99DB0004D06C /* UnsafeExplorer */,
 				DAB24E9E29CF99DB0004D06C /* Products */,
+				DA76288729CF9A7D00DD9021 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +81,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DAB24EAF29CF99F80004D06C /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				DAB24EB029CF99F80004D06C /* UnsafeWrapCSampler */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +105,9 @@
 			dependencies = (
 			);
 			name = UnsafeExplorer;
+			packageProductDependencies = (
+				DA76288829CF9A7D00DD9021 /* UWCSampler */,
+			);
 			productName = UnsafeExplorer;
 			productReference = DAB24E9D29CF99DB0004D06C /* UnsafeExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -350,6 +373,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA76288829CF9A7D00DD9021 /* UWCSampler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UWCSampler;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DAB24E9529CF99DB0004D06C /* Project object */;
 }
