@@ -9,7 +9,7 @@ import SwiftUI
 import UWCSampler
 
 struct ContentView: View {
-    let rand = RandomNumberSetProvider()
+    var rand = RandomNumberSetProvider()
     @State var myNum:Int = 0
     
     var body: some View {
@@ -46,6 +46,11 @@ struct ContentView: View {
         
         let vals2 = rand.addRandomTo([345, 773, 983, 8827, 1], upTo:50)
         print(vals2)
+        
+        //rand.testBufferProcess()
+        
+        let newBuffer = rand.processBuffer()
+        print(newBuffer)
     }
 }
 
