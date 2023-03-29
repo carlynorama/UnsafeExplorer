@@ -11,9 +11,11 @@ import UWCSampler
 struct ContentView: View {
     var rand = RandomNumberSetProvider()
     @State var myNum:Int = 0
+    @State var message = "No message"
     
     var body: some View {
         VStack {
+            Text(message)
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
@@ -27,12 +29,16 @@ struct ContentView: View {
             Button("Print random in range") {
                 printPlusRandos()
             }
+            Button("Fetch array") {
+                fetchArrays()
+            }
         }
         .padding()
     }
     
     func updateNumber() {
-        myNum = rand.getRandomInt()
+        //myNum = rand.getRandomInt()
+        myNum = rand.getRandomIntSafer()
     }
     
     func printRandos() {
@@ -51,7 +57,39 @@ struct ContentView: View {
         
         let newBuffer = rand.processBuffer()
         print(newBuffer)
+        
+        //rand.cPrintMessage(message:"Hello from c")
+        message = rand.asMessage()
     }
+    
+    func fetchArrays() {
+        let data = rand.fetchBaseBuffer()
+        print(data)
+        
+        let data_32 = rand.fetchBaseBufferRGBA()
+        for value in data_32 {
+            print(String(format:"0x%08X", value), terminator: "\t")
+        }
+        print()
+        
+        let data_16 = rand.bufferSetToHigh(count: 20, ofType: Double.self)
+        print(data_16)
+        
+        let another = rand.makeArrayOfRandomIntCleaner(count: 7)
+        print(another)
+        
+        print("expecting string return: \(rand.getString())")
+        
+        print(rand.pointToType())
+        
+        rand.tupleEraser()
+        rand.extractStructItem()
+    }
+}
+
+struct TestCustomStruct {
+    let test:Int = 0;
+    let test_other:UInt16 = 0;
 }
 
 struct ContentView_Previews: PreviewProvider {
