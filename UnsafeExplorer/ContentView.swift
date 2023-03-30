@@ -35,6 +35,9 @@ struct ContentView: View {
             Button("Color Funcs") {
                 colorFuncs()
             }
+            Button("Union Funcs") {
+                pseudoUnionFuncs()
+            }
         }
         .padding()
     }
@@ -58,7 +61,7 @@ struct ContentView: View {
         
         //rand.testBufferProcess()
         
-        let newBuffer = rand.processBuffer()
+        let newBuffer = rand.fuzzBuffer()
         print(newBuffer)
         
         //rand.cPrintMessage(message:"Hello from c")
@@ -94,6 +97,27 @@ struct ContentView: View {
         let buffer = rand.makeRandomColorBuffer(count:20)
         rand.printColorBuffer(buffer)
     }
+    
+    func pseudoUnionFuncs() {
+        var test = PseudoUnion(full:0xFFCC9966)
+        test.testPrint()
+        
+        test.red = 0x11
+        test.green = 0x44
+        test.blue = 0x77
+        test.alpha = 0xAA
+        
+        test.testPrint()
+        
+        test.bytes[0] = 35
+        test.bytes[1] = 127
+        test.bytes[2] = 200
+        test.bytes[3] = 61
+        
+        test.testPrint()
+
+    }
+    
 }
 
 struct TestCustomStruct {
