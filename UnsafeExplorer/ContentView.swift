@@ -9,7 +9,7 @@ import SwiftUI
 import UWCSampler
 
 struct ContentView: View {
-    var rand = RandomNumberSetProvider()
+    var rand = RandomProvider()
     @State var myNum:Int = 0
     @State var message = "No message"
     
@@ -38,16 +38,16 @@ struct ContentView: View {
     
     func updateNumber() {
         //myNum = rand.getRandomInt()
-        myNum = rand.getRandomIntSafer()
+        myNum = rand.getRandomIntClosure()
     }
     
     func printRandos() {
-        let vals = rand.makeArrayOfRandomInt(count:10)
+        let vals = rand.makeArrayOfRandomIntExplicitPointer(count:10)
         print(vals)
     }
     
     func printPlusRandos() {
-        let vals = rand.randomValueInRange(min: 45, max: 234, count: 12)
+        let vals = rand.makeArrayOfRandomInRangeExplicitPointers(min: 45, max: 234, count: 12)
         print(vals)
         
         let vals2 = rand.addRandomTo([345, 773, 983, 8827, 1], upTo:50)
@@ -59,7 +59,7 @@ struct ContentView: View {
         print(newBuffer)
         
         //rand.cPrintMessage(message:"Hello from c")
-        message = rand.asMessage()
+        message = rand.getAnswer()
     }
     
     func fetchArrays() {
@@ -75,7 +75,7 @@ struct ContentView: View {
         let data_16 = rand.bufferSetToHigh(count: 20, ofType: Double.self)
         print(data_16)
         
-        let another = rand.makeArrayOfRandomIntCleaner(count: 7)
+        let another = rand.makeArrayOfRandomIntClosure(count: 7)
         print(another)
         
         print("expecting string return: \(rand.getString())")
