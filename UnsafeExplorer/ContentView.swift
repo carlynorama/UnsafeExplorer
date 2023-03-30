@@ -32,6 +32,9 @@ struct ContentView: View {
             Button("Fetch array") {
                 fetchArrays()
             }
+            Button("Color Funcs") {
+                colorFuncs()
+            }
         }
         .padding()
     }
@@ -47,11 +50,11 @@ struct ContentView: View {
     }
     
     func printPlusRandos() {
-        let vals = rand.makeArrayOfRandomInRangeExplicitPointers(min: 45, max: 234, count: 12)
-        print(vals)
+//        let vals = rand.makeArrayOfRandomInRangeExplicitPointers(min: 45, max: 234, count: 12)
+//        print(vals)
         
-        let vals2 = rand.addRandomTo([345, 773, 983, 8827, 1], upTo:50)
-        print(vals2)
+//        let vals2 = rand.addRandomTo([345, 773, 983, 8827, 1], upTo:50)
+//        print(vals2)
         
         //rand.testBufferProcess()
         
@@ -72,18 +75,24 @@ struct ContentView: View {
         }
         print()
         
-        let data_16 = rand.bufferSetToHigh(count: 20, ofType: Double.self)
-        print(data_16)
+//        let data_16 = rand.bufferSetToHigh(count: 20, ofType: Double.self)
+        //print(data_16)
         
         let another = rand.makeArrayOfRandomIntClosure(count: 7)
         print(another)
         
-        print("expecting string return: \(rand.getString())")
+//        print("expecting string return: \(rand.getString())")
         
         print(rand.pointToType())
         
         rand.tupleEraser()
         rand.extractStructItem()
+    }
+    
+    func colorFuncs() {
+        rand.printColorInfo(colorInt: 0xFF00CC33)
+        let buffer = rand.makeRandomColorBuffer(count:20)
+        rand.printColorBuffer(buffer)
     }
 }
 
