@@ -93,9 +93,22 @@ struct ContentView: View {
     }
     
     func colorFuncs() {
-        rand.printColorInfo(colorInt: 0xFF00CC33)
-        let buffer = rand.makeRandomColorBuffer(count:20)
-        rand.printColorBuffer(buffer)
+//        rand.printColorInfo(colorInt: 0xFF00CC33)
+//        let buffer = rand.makeRandomColorBuffer(count:20)
+//        rand.printColorBuffer(buffer)
+//
+//        rand.testOpaqueColor()
+        
+        let bridgeColor:BridgeColor = BridgeColor(red:77, green: 123, blue: 11, alpha: 255)
+        
+        let val_pt = bridgeColor.asUINT32FromPointer()
+        let val_ctp = bridgeColor.asUINT32FromPointer()
+        
+        bridgeColor.printExpectedInt()
+        print("Pointer typedef = \(String(format:"0x%08x",val_pt))")
+        print("Pointer to concrete typedef = \(String(format:"0x%08x",val_ctp))")
+        
+        //bridgeColor.testCOC()
     }
     
     func pseudoUnionFuncs() {
@@ -115,7 +128,6 @@ struct ContentView: View {
         test.bytes[3] = 61
         
         test.testPrint()
-
     }
     
 }
