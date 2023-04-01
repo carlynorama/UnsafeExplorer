@@ -72,14 +72,14 @@ struct ContentView: View {
     }
     
     func fetchArrays() {
-        let data = rand.fetchBaseBuffer()
-        print(data)
-        
-        let data_32 = rand.fetchBaseBufferRGBA()
-        for value in data_32 {
-            print(String(format:"0x%08X", value), terminator: "\t")
-        }
-        print()
+//        let data = rand.fetchBaseBuffer()
+//        print(data)
+//        
+//        let data_32 = rand.fetchBaseBufferRGBA()
+//        for value in data_32 {
+//            print(String(format:"0x%08X", value), terminator: "\t")
+//        }
+//        print()
         
 //        let data_16 = rand.bufferSetToHigh(count: 20, ofType: Double.self)
         //print(data_16)
@@ -152,6 +152,11 @@ struct ContentView: View {
         print(inoutTuple)
         tupleBridge.loadIntoTupleFromArray(tuple: &inoutTuple, count: 4, type: CInt.self)
         print(inoutTuple)
+        
+        var destTuple:(CInt, CInt, CInt, CInt) = (0, 0, 0,0)
+        print(destTuple)
+        tupleBridge.memCopyToTuple(tuple: &destTuple, count: 4, type: CInt.self)
+        print(destTuple)
     }
     
 }
