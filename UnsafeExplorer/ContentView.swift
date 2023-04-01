@@ -19,16 +19,8 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world! (\(myNum))")
-            Button("New Number") {
-                updateNumber()
-            }
-            Button("Print random numbers") {
-                printRandos()
-            }
-            Button("Print random in range") {
-                printPlusRandos()
-            }
+
+
             Button("Tuple Funcs") {
                 tupleBridge()
             }
@@ -45,31 +37,10 @@ struct ContentView: View {
         .padding()
     }
     
-    func updateNumber() {
-        //myNum = rand.getRandomInt()
-        myNum = rand.getRandomIntClosure()
-    }
+
+
     
-    func printRandos() {
-        let vals = rand.makeArrayOfRandomIntExplicitPointer(count:10)
-        print(vals)
-    }
-    
-    func printPlusRandos() {
-//        let vals = rand.makeArrayOfRandomInRangeExplicitPointers(min: 45, max: 234, count: 12)
-//        print(vals)
-        
-//        let vals2 = rand.addRandomTo([345, 773, 983, 8827, 1], upTo:50)
-//        print(vals2)
-        
-        //rand.testBufferProcess()
-        
-        let newBuffer = rand.fuzzBuffer()
-        print(newBuffer)
-        
-        //rand.cPrintMessage(message:"Hello from c")
-        message = rand.getAnswer()
-    }
+
     
     func fetchArrays() {
 //        let data = rand.fetchBaseBuffer()

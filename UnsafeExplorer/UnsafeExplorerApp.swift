@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+
 @main
 struct UnsafeExplorerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingPageView()
         }
     }
 }
