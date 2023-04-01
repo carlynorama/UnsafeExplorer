@@ -12,44 +12,67 @@ import UWCSampler
 struct RandomProviderView: View {
     var rand = RandomProvider()
     @State var myNum:Int = 0
+    @State var bufferCInt:[CInt] = [0]
+    @State var bufferInt:[Int] = [0]
+    @State var bufferUInt8:[UInt8] = [0]
+    @State var addRandomTo100Text = "100"
+//    @State var bufferCIntText = "[0]"
+    
     var body: some View {
         VStack {
-            Text("RandomProviderView")
-            Text("Hello, world! (\(myNum))")
-            Button("New Number") {
-                updateNumber()
+            Spacer()
+            Group {
+                Text("RandomProviderView")
+                Text("Hello, world! (\(myNum))")
+                Button("New Number") {
+                    myNum = rand.getRandomIntClosure()
+                }
+                Text(addRandomTo100Text)
+                Button("Add random number to 100, capped at 255") {
+                    let randomPositiveNumber:CInt = 100
+                    addRandomTo100Text = "\(rand.addRandom(to: randomPositiveNumber, cappingAt: 255)))"
+                }
             }
-            Button("Print random numbers") {
-                printRandos()
+            Spacer()
+            Group {
+                Text("Ints: \(bufferInt.description)")
+                Text("CInts: \(bufferCInt.description)")
+                
+                Button("Generate Buffers") {
+                    bufferCInt = rand.makeArrayOfRandomIntExplicitPointer(count:10).map({CInt($0)})
+                    bufferInt = rand.makeArrayOfRandomInRange(min: 30, max: 200, count: 8)
+                }
+                Button("Generate Buffers") {
+                    alterBuffers()
+                }
             }
-            Button("Print random in range") {
-                printPlusRandos()
+            Spacer()
+            Group {
+                Text("UInt8s: \(bufferUInt8.description)")
+                Button("Fuzz UInt8 Buffer ± 5") {
+                    fuzzedBuffer()
+                }
             }
+            Spacer()
+           
+        }.onAppear {
+            bufferUInt8 = rand.base_buffer
         }
     }
     
-    func updateNumber() {
-        //myNum = rand.getRandomInt()
-        myNum = rand.getRandomIntClosure()
+ 
+    
+    func alterBuffers() {
+        bufferInt = rand.addRandomWithCap(bufferCInt.map({UInt32($0)}), newValueCap: 255).map({Int($0)})
+        bufferCInt = rand.addRandomTo(bufferCInt, randomValueUpTo: 10)
     }
     
-    
-    func printRandos() {
-        let vals = rand.makeArrayOfRandomIntExplicitPointer(count:10)
-        print(vals)
-    }
-    
-    func printPlusRandos() {
-//        let vals = rand.makeArrayOfRandomInRangeExplicitPointers(min: 45, max: 234, count: 12)
-//        print(vals)
-        
-//        let vals2 = rand.addRandomTo([345, 773, 983, 8827, 1], upTo:50)
-//        print(vals2)
-        
+    func fuzzedBuffer() {
         //rand.testBufferProcess()
         
-        let newBuffer = rand.fuzzBuffer()
+        let newBuffer:[UInt8] = rand.fuzzedBaseBuffer(fuzzAmount: 5)
         print(newBuffer)
+        bufferUInt8 =  newBuffer
 
     }
 }

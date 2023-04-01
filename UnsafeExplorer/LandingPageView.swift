@@ -41,29 +41,6 @@ struct LandingPageView: View {
 }
 
 
-struct RandomColorsView: View {
-    var body: some View {
-        Text("RandomColorView")
-    }
-}
-
-struct PseudoUnionView: View {
-    var body: some View {
-        Text("PseudoUnion")
-    }
-}
-
-struct OpaquePointersView: View {
-    var body: some View {
-        Text("OpaquePointersView")
-    }
-}
-
-struct HandyFunctionsView: View {
-    var body: some View {
-        Text("HandyFunctionsView")
-    }
-}
 
 
 struct LandingPageView_Previews: PreviewProvider {
