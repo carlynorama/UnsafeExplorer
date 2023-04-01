@@ -29,15 +29,18 @@ struct ContentView: View {
             Button("Print random in range") {
                 printPlusRandos()
             }
-            Button("Fetch array") {
-                fetchArrays()
+            Button("Tuple Funcs") {
+                tupleBridge()
             }
-            Button("Color Funcs") {
-                colorFuncs()
-            }
-            Button("Union Funcs") {
-                pseudoUnionFuncs()
-            }
+//            Button("Fetch array") {
+//                fetchArrays()
+//            }
+//            Button("Color Funcs") {
+//                colorFuncs()
+//            }
+//            Button("Union Funcs") {
+//                pseudoUnionFuncs()
+//            }
         }
         .padding()
     }
@@ -86,29 +89,39 @@ struct ContentView: View {
         
 //        print("expecting string return: \(rand.getString())")
         
-        print(rand.pointToType())
-        
-        rand.tupleEraser()
-        rand.extractStructItem()
+//        print(rand.pointToType())
+//
+//        rand.tupleEraser()
+//        rand.extractStructItem()
     }
     
     func colorFuncs() {
-//        rand.printColorInfo(colorInt: 0xFF00CC33)
-//        let buffer = rand.makeRandomColorBuffer(count:20)
-//        rand.printColorBuffer(buffer)
-//
-//        rand.testOpaqueColor()
+//        print("----------------------------------------")
+//        rand.printUInt32AsColor(colorInt: 0xFF00CC33)
+//        let buffer = rand.makeRandomUInt32Buffer(count:20)
+//        rand.printUInt32BufferAsColor(buffer)
+//        print("----------")
+//        var c_color = rand.makeAndVerifyCColor(0xCCFF3366)
+//        c_color.red = 0
+//        rand.printCColorRGBA(c_color)
+//        print("----------")
+//        let castBuffer = rand.castUInt32BufferAsColors(buffer)
+//        rand.printCColorRGBABuffer(castBuffer)
         
+        rand.testTransfer()
+
+    }
+    
+    func bridgeColorTests() {
         let bridgeColor:BridgeColor = BridgeColor(red:77, green: 123, blue: 11, alpha: 255)
         
-        let val_pt = bridgeColor.asUINT32FromPointer()
-        let val_ctp = bridgeColor.asUINT32FromPointer()
+        let val_pt = bridgeColor.asUINT32FromPointerType()
+        let val_ctp = bridgeColor.asUINT32FromPointerToConcreteType()
         
         bridgeColor.printExpectedInt()
         print("Pointer typedef = \(String(format:"0x%08x",val_pt))")
         print("Pointer to concrete typedef = \(String(format:"0x%08x",val_ctp))")
         
-        //bridgeColor.testCOC()
     }
     
     func pseudoUnionFuncs() {
@@ -128,6 +141,17 @@ struct ContentView: View {
         test.bytes[3] = 61
         
         test.testPrint()
+    }
+    
+    func tupleBridge() {
+        let exampleTuple:(CInt, CInt, CInt, CInt) = (34, 82, 18812,9122)
+        let tupleBridge = TupleBridgeArrayBased(tuple: exampleTuple, count: 4, type: CInt.self)
+        tupleBridge.printMe()
+        tupleBridge.erasedForCExample()
+        var inoutTuple:(CInt, CInt, CInt, CInt) = (0, 0, 0,0)
+        print(inoutTuple)
+        tupleBridge.loadIntoTupleFromArray(tuple: &inoutTuple, count: 4, type: CInt.self)
+        print(inoutTuple)
     }
     
 }
