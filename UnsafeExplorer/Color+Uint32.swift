@@ -42,4 +42,6 @@ extension Color {
                   blue: uint32_ABGR.b1.zeroToOne,
                   opacity: uint32_ABGR.b0.zeroToOne)
     }
+    
+
 }

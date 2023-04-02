@@ -25,22 +25,27 @@ struct RandomColorsView: View {
                 testColorFunctions()
             }
             HStack {
-                //colors are not guaranteed to be unique so ForEach(color, id: \.self) in adequate.
-                //Could have just used colors.indices()
-                //because colors[] is a zero-based, integer-indexed collections (Array).
-                //in fact probably should since can't use \.self since Color isn't hashable.
+                //colors are not guaranteed to be unique so ForEach(color, id: \.self) is not adequate.
+                //Can't use colors.indices() b/c not a constant value.
+                //An aray of a zip is better, but in fact not ideal solution in
+                //this case b/c forced to use .0 (not stable, color at index can change)
+                //since can't use \.self because Color isn't hashable.
                 //or \.1 since Color isn't Identifiable.
                 //ForEach is a view manager so it is very sensitive to changes
-                // consider color.id(UUID()) if problems arise. 
+                // consider color.id(UUID()) if problems arise.
+                //See https://developer.apple.com/videos/play/wwdc2021/10022/
                 ForEach(Array(zip(colors.indices, colors)), id: \.0) { index, color in
-                    color.id(UUID())
+                    color//.id(UUID())
                 }
+                
             }
             Button("Load Colors from Int") {
                 loadColorArray()
             }
             HStack {
-                //Alternative to zip available to Arrays
+                //Alternative (.enumerated) to zip available to Arrays
+                //are a zero-based, integer-indexed collections (Array)
+                //This solution should be the less flakey.
                 ForEach(Array(c_colors.enumerated()), id: \.element) { index, color in
                   color
                 }
