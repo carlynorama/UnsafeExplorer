@@ -32,9 +32,6 @@ final class ColorModel:ObservableObject {
             } else {
                 print("No change")
             }
-
-            
-            
         }
     }
 }
