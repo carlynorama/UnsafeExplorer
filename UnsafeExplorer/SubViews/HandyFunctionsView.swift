@@ -22,16 +22,22 @@ struct HandyFunctionsView: View {
             Button("Test Assembler") {
                 exampleAssemblerTest()
             }
+            
+            Button("TupleBridge Tests") {
+                tupleBridgeTests()
+            }
 
             Button("Process Data") {
                 processDataTest()
                 processOffsetDataTest()
                 loadArraysTest()
             }
-
-            Button("TupleBridge Tests") {
-                tupleBridge()
+            
+            Button("Digging inside a Struct Tests") {
+                structItems()
             }
+
+
         }
     }
     
@@ -135,9 +141,14 @@ struct HandyFunctionsView: View {
         
     }
     
-    func extractSubParts() {
-        var header = ThisHeader(id: 255, value: UInt32.max, whyNotLetsTry: "AAAAAAA")
-        let byteCount = MemoryLayout.size(ofValue: header)
+    func structItems() {
+        
+        handy.conveniencePointerToStructItem()
+        handy.calculatedPointerToStructItem()
+        
+        
+//        var header = ThisHeader(id: 255, value: UInt32.max, whyNotLetsTry: "AAAAAAA")
+//        let byteCount = MemoryLayout.size(ofValue: header)
         
 //        let data_h = withUnsafeMutablePointer(to: &header) { pointer in
 //            let raw = UnsafeMutableRawPointer(pointer)
@@ -150,9 +161,7 @@ struct HandyFunctionsView: View {
     
     
     
-    func tupleBridge() {
-        
-        handy.tupleEraser()
+    func tupleBridgeTests() {
         
         let exampleTuple:(CInt, CInt, CInt, CInt) = (34, 82, 18812,9122)
         let tupleBridge = TupleBridge(tuple: exampleTuple, count: 4, type: CInt.self)
