@@ -11,13 +11,6 @@ import SwiftUI
 
 
 fileprivate extension UInt32 {
-//    func getComponent(at index:UInt32) -> UInt8? {
-//        guard index < 4 else {
-//            return nil
-//        }
-//        return UInt8((self >> 8 * index) & 0xFF)
-//    }
-    
     var b0:UInt8 {
         return UInt8(self & 0xFF)
     }
