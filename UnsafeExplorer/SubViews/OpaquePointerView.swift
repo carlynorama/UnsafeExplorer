@@ -37,8 +37,9 @@ final class ColorModel:ObservableObject {
 }
 
 struct OpaquePointersView: View {
-    //Cannot Use. Built in colors don't have CGColors!!
+    
     private let colors:[Color] = [.cyan, .pink, .yellow, .black, .accentColor, .indigo, .mint, .purple, .teal, .brown, .white]
+    
     @State var structColor = BridgeColor(red:77, green: 123, blue: 11, alpha: 255)
     @StateObject var classColor = ColorModel(color: .orange)
     var body: some View {
@@ -59,9 +60,6 @@ struct OpaquePointersView: View {
                 Color(nativeColor: classColor.color)
                 Text("Class")
             }
-            
-            
-
             
             Button("Update Class Color") {
                 updateClassColor()
