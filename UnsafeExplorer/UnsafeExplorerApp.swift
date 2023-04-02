@@ -2,7 +2,7 @@
 //  UnsafeExplorerApp.swift
 //  UnsafeExplorer
 //
-//  Created by Labtanza on 3/25/23.
+//  Created by Carlyn Maw on 3/25/23.
 //
 
 import SwiftUI
