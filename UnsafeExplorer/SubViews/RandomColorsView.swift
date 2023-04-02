@@ -16,7 +16,7 @@ struct RandomColorsView: View {
     
     var body: some View {
         VStack {
-
+            
             generatedColor
             Button("Update Color") {
                 updateColor()
@@ -47,7 +47,7 @@ struct RandomColorsView: View {
                 //are a zero-based, integer-indexed collections (Array)
                 //This solution should be the less flakey.
                 ForEach(Array(c_colors.enumerated()), id: \.element) { index, color in
-                  color
+                    color
                 }
             }
             Button("Load Colors from CColor") {
@@ -91,7 +91,7 @@ struct RandomColorsView: View {
         rand.printCColorRGBABuffer(castBuffer)
         
         rand.testTransfer()
-
+        
     }
     
     func getComponent(from thisInt:UInt32, position:Int) -> Double {

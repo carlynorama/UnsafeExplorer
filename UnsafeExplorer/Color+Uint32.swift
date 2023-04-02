@@ -43,5 +43,5 @@ extension Color {
                   opacity: uint32_ABGR.b0.zeroToOne)
     }
     
-
+    
 }

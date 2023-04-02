@@ -25,34 +25,34 @@ extension NativeColor {
 }
 
 extension Color {
-    #if canImport(UIKit)
+#if canImport(UIKit)
     //typealias NativeColor = UIColor
     init(nativeColor:NativeColor) {
         self.init(uiColor: nativeColor)
     }
-    #elseif canImport(AppKit)
+#elseif canImport(AppKit)
     //typealias NativeColor = NSColor
     init(nativeColor:NativeColor) {
         self.init(nsColor:nativeColor)
     }
-    #endif
+#endif
 }
 
 //https://stackoverflow.com/questions/56586055/how-to-get-rgb-components-from-color-in-swiftui
 extension Color {
-    #if canImport(UIKit)
+#if canImport(UIKit)
     var asNative: UIColor { UIColor(self) }
-    #elseif canImport(AppKit)
+#elseif canImport(AppKit)
     var asNative: NSColor { NSColor(self) }
-    #endif
-
+#endif
+    
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         let color = asNative.usingColorSpace(.deviceRGB)!
         var t = (CGFloat(), CGFloat(), CGFloat(), CGFloat())
         color.getRed(&t.0, green: &t.1, blue: &t.2, alpha: &t.3)
         return t
     }
-
+    
     var hsva: (hue: CGFloat, saturation: CGFloat, value: CGFloat, alpha: CGFloat) {
         let color = asNative.usingColorSpace(.deviceRGB)!
         var t = (CGFloat(), CGFloat(), CGFloat(), CGFloat())

@@ -37,7 +37,7 @@ struct LandingPageView: View {
                 }
         }.padding(20)
     }
-
+    
 }
 
 

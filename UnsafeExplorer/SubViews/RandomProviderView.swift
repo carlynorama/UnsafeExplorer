@@ -16,7 +16,7 @@ struct RandomProviderView: View {
     @State var bufferInt:[Int] = [0]
     @State var bufferUInt8:[UInt8] = [0]
     @State var addRandomTo100Text = "100"
-//    @State var bufferCIntText = "[0]"
+    //@State var bufferCIntText = "[0]"
     
     var body: some View {
         VStack {
@@ -54,13 +54,13 @@ struct RandomProviderView: View {
                 }
             }
             Spacer()
-           
+            
         }.onAppear {
             bufferUInt8 = rand.base_buffer
         }
     }
     
- 
+    
     
     func alterBuffers() {
         bufferInt = rand.addRandomWithCap(bufferCInt.map({UInt32($0)}), newValueCap: 255).map({Int($0)})
@@ -73,7 +73,7 @@ struct RandomProviderView: View {
         let newBuffer:[UInt8] = rand.fuzzedBaseBuffer(fuzzAmount: 5)
         print(newBuffer)
         bufferUInt8 =  newBuffer
-
+        
     }
 }
 

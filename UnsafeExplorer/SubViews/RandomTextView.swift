@@ -48,11 +48,12 @@ struct RandomTextView: View {
     }
     
     //TODO: What the heck??!!
-    //TODO: Is this behaving differently on Intel and M1? 
+    //TODO: Is this behaving differently on Intel and M1?
     func scrambleMessage(_ toScramble:String) {
         //"bcdefghijklmopq"
-       scrambledMessage =      rand.scrambleMessage(message: "abcdefghijklmop") // fails at 15 chars + 0?
-            //Pointer error in there somewhere.
+        scrambledMessage =      rand.scrambleMessage(message: "abcdefghijklmop")
+        // fails at 15 chars + 0?
+        //Pointer error in there somewhere?
         //"abcdefghi" only 9 chars when from the text field?
         //abcdefghijklmop\357\340\351\350S ?? where did those come from?
     }
