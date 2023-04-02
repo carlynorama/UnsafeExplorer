@@ -9,8 +9,12 @@ import SwiftUI
 import UWCSampler
 
 struct OpaquePointersView: View {
+    @State var viewColor = BridgeColor(red:77, green: 123, blue: 11, alpha: 255)
     var body: some View {
         Text("OpaquePointersView")
+        Button("Run Test Functions") {
+            bridgeColorTests()
+        }
     }
     
     func bridgeColorTests() {

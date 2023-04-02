@@ -14,6 +14,8 @@
 		D23AEFFA29D8860700F90BA6 /* RandomColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23AEFF929D8860700F90BA6 /* RandomColorsView.swift */; };
 		D23AEFFC29D8904200F90BA6 /* HandyFunctionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23AEFFB29D8904200F90BA6 /* HandyFunctionsView.swift */; };
 		D23AEFFE29D890FB00F90BA6 /* OpaquePointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23AEFFD29D890FB00F90BA6 /* OpaquePointerView.swift */; };
+		D28DD05429D990C50027ED72 /* PsuedoUnion+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD05329D990C50027ED72 /* PsuedoUnion+Color.swift */; };
+		D28DD05629D999CB0027ED72 /* Color+Uint32.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD05529D999CB0027ED72 /* Color+Uint32.swift */; };
 		DA76288929CF9A7D00DD9021 /* UWCSampler in Frameworks */ = {isa = PBXBuildFile; productRef = DA76288829CF9A7D00DD9021 /* UWCSampler */; };
 		DAB24EA129CF99DB0004D06C /* UnsafeExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */; };
 		DAB24EA529CF99DD0004D06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB24EA429CF99DD0004D06C /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		D23AEFF929D8860700F90BA6 /* RandomColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColorsView.swift; sourceTree = "<group>"; };
 		D23AEFFB29D8904200F90BA6 /* HandyFunctionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandyFunctionsView.swift; sourceTree = "<group>"; };
 		D23AEFFD29D890FB00F90BA6 /* OpaquePointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaquePointerView.swift; sourceTree = "<group>"; };
+		D28DD05329D990C50027ED72 /* PsuedoUnion+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PsuedoUnion+Color.swift"; sourceTree = "<group>"; };
+		D28DD05529D999CB0027ED72 /* Color+Uint32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Uint32.swift"; sourceTree = "<group>"; };
 		DAB24E9D29CF99DB0004D06C /* UnsafeExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsafeExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeExplorerApp.swift; sourceTree = "<group>"; };
 		DAB24EA429CF99DD0004D06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			children = (
 				DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */,
 				D23AEFF029D7CA0100F90BA6 /* LandingPageView.swift */,
+				D28DD05529D999CB0027ED72 /* Color+Uint32.swift */,
+				D28DD05329D990C50027ED72 /* PsuedoUnion+Color.swift */,
 				D23AEFF629D7F19800F90BA6 /* SubViews */,
 				DAB24EA429CF99DD0004D06C /* Assets.xcassets */,
 				DAB24EA629CF99DD0004D06C /* UnsafeExplorer.entitlements */,
@@ -188,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28DD05629D999CB0027ED72 /* Color+Uint32.swift in Sources */,
 				D23AEFF529D7EF2300F90BA6 /* RandomTextView.swift in Sources */,
 				D23AEFFE29D890FB00F90BA6 /* OpaquePointerView.swift in Sources */,
 				D23AEFF829D8826D00F90BA6 /* PseudoUnionView.swift in Sources */,
@@ -195,6 +202,7 @@
 				D23AEFF129D7CA0100F90BA6 /* LandingPageView.swift in Sources */,
 				D23AEFFA29D8860700F90BA6 /* RandomColorsView.swift in Sources */,
 				D23AEFF329D7EEC700F90BA6 /* RandomProviderView.swift in Sources */,
+				D28DD05429D990C50027ED72 /* PsuedoUnion+Color.swift in Sources */,
 				DAB24EA129CF99DB0004D06C /* UnsafeExplorerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

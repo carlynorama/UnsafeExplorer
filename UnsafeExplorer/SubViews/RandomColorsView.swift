@@ -25,15 +25,23 @@ struct RandomColorsView: View {
                 testColorFunctions()
             }
             HStack {
+                //colors are not guaranteed to be unique so ForEach(color, id: \.self) in adequate.
+                //Could have just used colors.indices()
+                //because colors[] is a zero-based, integer-indexed collections (Array).
+                //in fact probably should since can't use \.self since Color isn't hashable.
+                //or \.1 since Color isn't Identifiable.
+                //ForEach is a view manager so it is very sensitive to changes
+                // consider color.id(UUID()) if problems arise. 
                 ForEach(Array(zip(colors.indices, colors)), id: \.0) { index, color in
-                  color
+                    color.id(UUID())
                 }
             }
             Button("Load Colors from Int") {
                 loadColorArray()
             }
             HStack {
-                ForEach(Array(zip(c_colors.indices, c_colors)), id: \.0) { index, color in
+                //Alternative to zip available to Arrays
+                ForEach(Array(c_colors.enumerated()), id: \.element) { index, color in
                   color
                 }
             }

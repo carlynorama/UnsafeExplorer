@@ -12,7 +12,10 @@ struct PseudoUnionView: View {
     @State var pseu = PseudoUnion(full: 0xFF0000FF)
     var body: some View {
         VStack {
-            Color(red: Double(pseu.red)/255.0, green: Double(pseu.green)/255.0, blue: Double(pseu.blue)/255.0, opacity: Double(pseu.alpha)/255.0)
+            //Color(red: Double(pseu.red)/255.0, green: Double(pseu.green)/255.0, blue: Double(pseu.blue)/255.0, opacity: Double(pseu.alpha)/255.0)
+            //See Extensions.
+            //Color(uint32_ABGR: pseu.full)
+            pseu.swiftUIColor
             Text(pseu.bytes.description)
             Text("Red: \(pseu.red)")
             Slider(value: UInt8DoubleBinding($pseu.red).doubleValue, in: 0...255, step: 1)
