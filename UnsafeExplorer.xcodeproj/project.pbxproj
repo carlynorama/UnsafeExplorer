@@ -36,7 +36,6 @@
 		D28DD05529D999CB0027ED72 /* Color+Uint32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Uint32.swift"; sourceTree = "<group>"; };
 		D2EC6DC429D9F7D0002BF26D /* BridgeColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BridgeColor+Color.swift"; sourceTree = "<group>"; };
 		D2EC6DC629D9F9F8002BF26D /* Color+UInt8+NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UInt8+NativeColor.swift"; sourceTree = "<group>"; };
-		D2EC6DC829DA1438002BF26D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = UnsafeExplorer/README.md; sourceTree = "<group>"; };
 		DAB24E9D29CF99DB0004D06C /* UnsafeExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsafeExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeExplorerApp.swift; sourceTree = "<group>"; };
 		DAB24EA429CF99DD0004D06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 		DAB24E9429CF99DB0004D06C = {
 			isa = PBXGroup;
 			children = (
-				D2EC6DC829DA1438002BF26D /* README.md */,
 				DAB24EAF29CF99F80004D06C /* Packages */,
 				DAB24E9F29CF99DB0004D06C /* UnsafeExplorer */,
 				DAB24E9E29CF99DB0004D06C /* Products */,
