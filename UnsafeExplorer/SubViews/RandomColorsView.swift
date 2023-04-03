@@ -8,11 +8,18 @@
 import SwiftUI
 import UWCSampler
 
+
 struct RandomColorsView: View {
     var rand = RandomProvider()
     @State var generatedColor:Color = .clear
     @State var colors:[Color] = [ .red, .green, .blue]
     @State var c_colors:[Color] = [ .red, .green, .blue]
+    
+    
+    func seeNoC() {
+        //without import UWCSamplerC, cant call C functions
+        random_int()
+    }
     
     var body: some View {
         VStack {
@@ -86,6 +93,7 @@ struct RandomColorsView: View {
         var c_color = rand.makeAndVerifyCColor(0xCCFF3366)
         c_color.red = 0
         rand.printCColorRGBA(c_color)
+        // -> since no C import can't do `let color = CColorRGBA(full: colorInt)` here.
         print("----------")
         let castBuffer = rand.castUInt32BufferAsColors(buffer)
         rand.printCColorRGBABuffer(castBuffer)
