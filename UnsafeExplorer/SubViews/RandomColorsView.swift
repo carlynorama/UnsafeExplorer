@@ -16,10 +16,10 @@ struct RandomColorsView: View {
     @State var c_colors:[Color] = [ .red, .green, .blue]
     
     
-    func seeNoC() {
-        //without import UWCSamplerC, cant call C functions
-        random_int()
-    }
+//    func seeNoC() {
+//        //without import UWCSamplerC, can't call C functions
+//        random_int()
+//    }
     
     var body: some View {
         VStack {
