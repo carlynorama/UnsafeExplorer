@@ -18,6 +18,7 @@
 		D28DD05629D999CB0027ED72 /* Color+Uint32.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DD05529D999CB0027ED72 /* Color+Uint32.swift */; };
 		D2EC6DC529D9F7D0002BF26D /* BridgeColor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC6DC429D9F7D0002BF26D /* BridgeColor+Color.swift */; };
 		D2EC6DC729D9F9F8002BF26D /* Color+UInt8+NativeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC6DC629D9F9F8002BF26D /* Color+UInt8+NativeColor.swift */; };
+		D2EC6DCA29DA7043002BF26D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2EC6DC929DA7043002BF26D /* README.md */; };
 		DA76288929CF9A7D00DD9021 /* UWCSampler in Frameworks */ = {isa = PBXBuildFile; productRef = DA76288829CF9A7D00DD9021 /* UWCSampler */; };
 		DAB24EA129CF99DB0004D06C /* UnsafeExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */; };
 		DAB24EA529CF99DD0004D06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB24EA429CF99DD0004D06C /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		D28DD05529D999CB0027ED72 /* Color+Uint32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Uint32.swift"; sourceTree = "<group>"; };
 		D2EC6DC429D9F7D0002BF26D /* BridgeColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BridgeColor+Color.swift"; sourceTree = "<group>"; };
 		D2EC6DC629D9F9F8002BF26D /* Color+UInt8+NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UInt8+NativeColor.swift"; sourceTree = "<group>"; };
+		D2EC6DC929DA7043002BF26D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAB24E9D29CF99DB0004D06C /* UnsafeExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsafeExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB24EA029CF99DB0004D06C /* UnsafeExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeExplorerApp.swift; sourceTree = "<group>"; };
 		DAB24EA429CF99DD0004D06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		DAB24E9429CF99DB0004D06C = {
 			isa = PBXGroup;
 			children = (
+				D2EC6DC929DA7043002BF26D /* README.md */,
 				DAB24EAF29CF99F80004D06C /* Packages */,
 				DAB24E9F29CF99DB0004D06C /* UnsafeExplorer */,
 				DAB24E9E29CF99DB0004D06C /* Products */,
@@ -188,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EC6DCA29DA7043002BF26D /* README.md in Resources */,
 				DAB24EA929CF99DD0004D06C /* Preview Assets.xcassets in Resources */,
 				DAB24EA529CF99DD0004D06C /* Assets.xcassets in Resources */,
 			);
