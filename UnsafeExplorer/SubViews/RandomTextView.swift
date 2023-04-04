@@ -35,6 +35,9 @@ struct RandomTextView: View {
             Button("print sending test & receiving test") {
                 stringFuncs()
             }
+            Button("Dump arrays to hex") {
+                getHexDumps()
+            }
         }
     }
     
@@ -57,6 +60,27 @@ struct RandomTextView: View {
         //"abcdefghi" only 9 chars when from the text field?
         //abcdefghijklmop\357\340\351\350S ?? where did those come from?
     }
+    
+    func getHexDumps() {
+        
+        let array1 = ["Hello", "how", "are", "you?"]
+        let array2 = rand.makeArrayOfRandomInRange(min: 0, max: CInt.max, count: 10)
+        let array3 = [ExampleStruct(), ExampleStruct(), ExampleStruct()]
+        
+        rand.cPrintHexAnyArray(array1)
+        rand.cPrintHexAnyArray(array2)
+        rand.cPrintHexAnyArray(array3)
+        
+    }
+    
+    
+}
+
+fileprivate struct ExampleStruct {
+    let myNumber:CInt = 42
+    let myString:String = "Hello"
+    let color:Color = .brown
+    let color2:Color = Color(cgColor: CGColor(red: 255, green: 255, blue: 255, alpha: 255))
 }
 
 struct RandomTextView_Previews: PreviewProvider {
