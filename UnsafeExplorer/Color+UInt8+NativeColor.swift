@@ -24,6 +24,8 @@ extension NativeColor {
     }
 }
 
+
+
 extension Color {
 #if canImport(UIKit)
     //typealias NativeColor = UIColor
@@ -37,9 +39,6 @@ extension Color {
     }
 #endif
 }
-
-
-
 //https://stackoverflow.com/questions/56586055/how-to-get-rgb-components-from-color-in-swiftui
 extension Color {
 #if canImport(UIKit)
